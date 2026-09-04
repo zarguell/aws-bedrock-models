@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>{{ base_url }}/</loc></url>
+{%- for slug, label, short in envs %}
+<url><loc>{{ base_url }}/env/{{ slug }}/</loc></url>
+{%- endfor %}
+<url><loc>{{ base_url }}/history/</loc></url>
+<url><loc>{{ base_url }}/feeds/</loc></url>
+<url><loc>{{ base_url }}/about/</loc></url>
+</urlset>

@@ -1,0 +1,16 @@
+# rendered site (built by CI from data/ + engine/ — never committed)
+/index.html
+/style.css
+/404.html
+/robots.txt
+/sitemap.xml
+/models.json
+/env/
+/history/
+/feeds/
+/about/
+
+__pycache__/
+*.pyc
+/.venv/
+/.build-manifest

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}History — {{ site_name }}{% endblock %}
+{% block content %}
+<h1>History</h1>
+<p class="lede">Every detected change to the AWS table, newest first. The feed only carries additions (and the baseline); removals are listed here for the record.</p>
+<ul class="changes">
+{%- for c in changes %}
+  <li id="{{ 'baseline-' + c.date if c.type == 'baseline' else c.type + '-' + c.date + '-' + (c.env or 'all') + '-' + model_slug(c.family or '', c.model or '') }}">
+    <span class="date">{{ fmt_med(c.date) }}</span>
+    {% if c.type == "baseline" %}
+    <span class="badge baseline">baseline</span>
+    Baseline ({{ c.source_last_updated }}): {{ c.total_models }} models tracked across {{ c.env_count }} environments.
+    {% elif c.type == "added" %}
+    <span class="badge added">new</span>
+    <strong>{{ c.model }}</strong> ({{ c.family }}) cleared for {{ env_label[c.env] }}.
+    {% else %}
+    <span class="badge removed">removed</span>
+    <strong>{{ c.model }}</strong> ({{ c.family }}) no longer listed for {{ env_label[c.env] }}.
+    {% endif %}
+  </li>
+{%- endfor %}
+</ul>
+{% endblock %}

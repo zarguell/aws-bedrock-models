@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Which Bedrock models are cleared for regulated workloads?</h1>
+<p class="lede">One table on AWS answers it — this site watches that table every morning and
+publishes a feed whenever a model <strong>gains</strong> availability in an environment.
+Baseline: {{ fmt_med(baseline.date) if baseline else "—" }} ({{ source.source_last_updated }}).</p>
+
+<section class="cards">
+{%- for slug, label, short in envs %}
+  <a class="card" href="{{ r }}env/{{ slug }}/index.html">
+    <span class="card-num">{{ counts[slug] }}</span>
+    <span class="card-label">{{ short }}</span>
+    <span class="card-sub">{{ label }}</span>
+  </a>
+{%- endfor %}
+</section>
+
+<h2>Latest changes</h2>
+{% if latest_changes %}
+<ul class="changes">
+{%- for c in latest_changes %}
+  <li id="{{ 'baseline-' + c.date if c.type == 'baseline' else 'added-' + c.date + '-' + c.env + '-' + model_slug(c.family, c.model) }}">
+    <span class="date">{{ fmt_med(c.date) }}</span>
+    {% if c.type == "baseline" %}
+    <span class="badge baseline">baseline</span>
+    {{ c.total_models }} models tracked across {{ c.env_count }} environments.
+    {% elif c.type == "added" %}
+    <span class="badge added">new</span>
+    <strong>{{ c.model }}</strong> ({{ c.family }}) cleared for {{ env_label[c.env] }}.
+    {% else %}
+    <span class="badge removed">removed</span>
+    <strong>{{ c.model }}</strong> ({{ c.family }}) no longer listed for {{ env_label[c.env] }}.
+    {% endif %}
+  </li>
+{%- endfor %}
+</ul>
+<p><a href="{{ r }}history/index.html">Full history →</a></p>
+{% else %}
+<p>No changes recorded yet.</p>
+{% endif %}
+
+<h2>Subscribe</h2>
+<p>One feed per environment, plus a combined feed — a new item appears the morning a model gains availability:</p>
+<ul>
+  <li><a href="{{ r }}feeds/feed-all.xml">All environments</a></li>
+{%- for slug, label, short in envs %}
+  <li><a href="{{ r }}feeds/feed-{{ slug }}.xml">{{ label }}</a></li>
+{%- endfor %}
+</ul>
+{% endblock %}

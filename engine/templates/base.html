@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site_name }}{% endblock %}</title>
+<meta name="description" content="{% block meta %}Daily tracker of which Amazon Bedrock models are certified for FedRAMP Class C, FedRAMP Class D (GovCloud), and DoD IL4/IL5 — with per-environment RSS feeds.{% endblock %}">
+<link rel="alternate" type="application/rss+xml" title="{{ site_name }}: all environments" href="{{ base_url }}/feeds/feed-all.xml">
+<link rel="alternate" type="application/rss+xml" title="U.S. E/W — FedRAMP Class C" href="{{ base_url }}/feeds/feed-us-ew.xml">
+<link rel="alternate" type="application/rss+xml" title="U.S. GovCloud — FedRAMP Class D" href="{{ base_url }}/feeds/feed-govcloud.xml">
+<link rel="alternate" type="application/rss+xml" title="DoD — CSP SRG IL4/IL5" href="{{ base_url }}/feeds/feed-dod.xml">
+<link rel="stylesheet" href="{{ r }}style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ r }}index.html">Bedrock <em>FedRAMP &amp; DoD</em> tracker</a>
+  <nav>
+    <a href="{{ r }}index.html">Home</a>
+    <a href="{{ r }}env/us-ew/index.html">U.S. E/W</a>
+    <a href="{{ r }}env/govcloud/index.html">GovCloud</a>
+    <a href="{{ r }}env/dod/index.html">DoD</a>
+    <a href="{{ r }}history/index.html">History</a>
+    <a href="{{ r }}feeds/index.html">Feeds</a>
+    <a href="{{ r }}about/index.html">About</a>
+  </nav>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <p>Unofficial tracker. Source: <a href="{{ source_url }}" rel="noopener">AWS Bedrock models — FedRAMP and DoD CSP SRG certification status</a>.
+     Not affiliated with Amazon Web Services.</p>
+  <p>Checked daily · <a href="{{ r }}feeds/index.html">RSS feeds</a> · <a href="{{ r }}models.json">models.json</a></p>
+</footer>
+</body>
+</html>

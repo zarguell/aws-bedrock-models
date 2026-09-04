@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Feeds — {{ site_name }}{% endblock %}
+{% block content %}
+<h1>RSS feeds</h1>
+<p class="lede">One feed per environment plus a combined feed. A new item appears the morning a model gains availability in that environment. No changes on AWS means no new items — silence is the signal that nothing moved.</p>
+<ul class="feeds">
+  <li><a href="{{ r }}feeds/feed-all.xml">All environments</a> — every addition, everywhere.</li>
+{%- for slug, label, short in envs %}
+  <li><a href="{{ r }}feeds/feed-{{ slug }}.xml">{{ label }}</a> — {{ counts[slug] }} models currently.</li>
+{%- endfor %}
+</ul>
+{% endblock %}

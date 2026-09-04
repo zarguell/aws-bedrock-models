@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}About — {{ site_name }}{% endblock %}
+{% block content %}
+<h1>About</h1>
+<p>This site tracks the <a href="{{ source_url }}" rel="noopener">AWS table of Bedrock model
+FedRAMP and DoD CSP SRG certification status</a>: which models may run in
+<strong>U.S. East/West (FedRAMP Class C)</strong>, <strong>U.S. GovCloud (FedRAMP Class D)</strong>,
+and <strong>DoD (CSP SRG IL4/IL5)</strong> environments.</p>
+<h2>How it works</h2>
+<ul>
+  <li>A scheduled check fetches the AWS page every morning (around 8:00 AM US/Eastern) and
+      parses its embedded table deterministically — no AI involved, byte-identical input
+      means no output.</li>
+  <li>If nothing changed, nothing is published. If a model <strong>gained</strong> availability
+      in an environment, the site rebuilds, the per-environment inventory gains a first-seen
+      date, and the feeds gain an item.</li>
+  <li>Removals are recorded in the history page but do not trigger a republish on their own;
+      they ship with the next addition-triggered update.</li>
+  <li>Baseline is {{ fmt_med(baseline.date) if baseline else "—" }} ({{ source.source_last_updated }}):
+      every model available then carries that first-seen date.</li>
+</ul>
+<h2>Machine-readable</h2>
+<p><a href="{{ r }}models.json">models.json</a> carries the full inventory, change log, and source metadata.</p>
+{% endblock %}

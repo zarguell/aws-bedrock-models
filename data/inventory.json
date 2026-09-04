@@ -1,0 +1,1012 @@
+{
+  "models": [
+    {
+      "family": "AI2I Labs",
+      "model": "Jamba 1.5 Large",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "AI2I Labs",
+      "model": "Jamba 1.5 Mini",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Amazon Titan",
+      "model": "Image Generator G1 v2",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Amazon Titan",
+      "model": "Multimodal Embeddings G1",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Amazon Titan",
+      "model": "Text Embeddings G1",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Amazon Titan",
+      "model": "Text Embeddings V2",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 3 Haiku",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 3.5 Haiku",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 3.5 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 3.5 Sonnet v2",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 3.7 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.0 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.1 Opus",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.5 Haiku",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.5 Opus",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.5 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.6 Opus",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.6 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 4.8 Opus",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
+      "model": "Claude 5 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Cohere",
+      "model": "Command R",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Cohere",
+      "model": "Command R+",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Cohere",
+      "model": "Embed English",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Cohere",
+      "model": "Embed Multilingual",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Cohere",
+      "model": "Embed Multimodal v4",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Cohere",
+      "model": "Rerank 3.5",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3 70B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3 8B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.1 405B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.1 70B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.1 8B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.2 11B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.2 1B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.2 3B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.2 90B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Meta",
+      "model": "Llama 3.3 70B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Mistral AI",
+      "model": "Mistral 7B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Mistral AI",
+      "model": "Mistral 8x7B Instruct",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Mistral AI",
+      "model": "Mistral Large (24.02)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Mistral AI",
+      "model": "Mistral Large (24.07)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Mistral AI",
+      "model": "Mistral Small (24.02)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Mistral AI",
+      "model": "Pixtral Large (25.02)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Nvidia",
+      "model": "Nemotron 3 Super 120B",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Nvidia",
+      "model": "Nemotron Nano 12B",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Nvidia",
+      "model": "Nemotron Nano 3 30B",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Nvidia",
+      "model": "Nemotron Nano 9B",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPS OSS 120B",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPS OSS 20B",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT 5.4",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT 5.6",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "Stability AI",
+      "model": "Stability Diffusion XL 1.0",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Stability AI",
+      "model": "Stable Diffusion 3 Large (SD3 Large)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Stability AI",
+      "model": "Stable Diffusion 3.5 Large",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Stability AI",
+      "model": "Stable Image Core 1.1",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Stability AI",
+      "model": "Stable Image Ultra 1.1",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "xAI",
+      "model": "Grok 4.3",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-08-25"
+        }
+      }
+    }
+  ]
+}
