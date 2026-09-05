@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ e.display }} still waiting in {{ env_short }} — {{ site_name }}{% endblock %}
+{% block meta %}It's been {{ wait_days }} days since {{ e.display }} launched with no {{ env_label }} authorization on AWS Bedrock.{% endblock %}
+{% block head %}
+<link rel="canonical" href="{{ page_url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site_name }}">
+<meta property="og:title" content="{{ e.display }} still waiting in {{ env_short }} after {{ wait_days }} days">
+<meta property="og:description" content="It's been {{ wait_days }} days since {{ e.display }} launched ({{ fmt_med(e.released) }}) with no {{ env_label }} authorization on AWS Bedrock. Watch the live timer.">
+<meta property="og:url" content="{{ page_url }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ e.display }} still waiting in {{ env_short }} after {{ wait_days }} days">
+<meta name="twitter:description" content="No {{ env_label }} authorization {{ wait_days }} days post-launch. Live timer: {{ page_url }}">
+{% endblock %}
+{% block content %}
+<p><a href="{{ r }}gaps/index.html">← all frontier gaps</a></p>
+<h1>{{ e.display }} × {{ env_short }}</h1>
+<p class="lede">it's been</p>
+<div class="timer" data-released="{{ e.released }}">
+  <span class="t-num" id="t-days">{{ wait_days }}</span><span class="t-unit">days</span>
+  <span class="t-num" id="t-hours">00</span><span class="t-unit">hrs</span>
+  <span class="t-num" id="t-mins">00</span><span class="t-unit">min</span>
+  <span class="t-num" id="t-secs">00</span><span class="t-unit">sec</span>
+</div>
+<p class="lede">since the release of <strong>{{ e.display }}</strong> ({{ fmt_med(e.released) }})
+without authorization in <strong>{{ env_label }}</strong>.</p>
+<p>
+  <button id="share-btn" data-share-url="{{ page_url }}"
+    data-share-title="{{ e.display }} still waiting in {{ env_short }} after {{ wait_days }} days"
+    data-share-text="It's been {{ wait_days }} days since {{ e.display }} launched with no {{ env_label }} authorization.">Share this wait</button>
+  <span id="share-note" class="muted"></span>
+</p>
+<p class="muted">Counter ticks live from the release date; day counts were {{ wait_days }} at build time
+({{ fmt_med(today) }}). When {{ e.display }} clears {{ env_short }}, this page retires to the
+<a href="{{ r }}history/index.html">history</a>.</p>
+<script>
+(function () {
+  var box = document.querySelector(".timer");
+  if (!box) return;
+  var t0 = Date.parse(box.getAttribute("data-released") + "T00:00:00Z");
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var s = Math.max(0, Math.floor((Date.now() - t0) / 1000));
+    document.getElementById("t-days").textContent = Math.floor(s / 86400);
+    document.getElementById("t-hours").textContent = pad(Math.floor(s / 3600) % 24);
+    document.getElementById("t-mins").textContent = pad(Math.floor(s / 60) % 60);
+    document.getElementById("t-secs").textContent = pad(s % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+  var btn = document.getElementById("share-btn");
+  var note = document.getElementById("share-note");
+  btn.addEventListener("click", function () {
+    var data = { title: btn.getAttribute("data-share-title"),
+                 text: btn.getAttribute("data-share-text"),
+                 url: btn.getAttribute("data-share-url") };
+    if (navigator.share) {
+      navigator.share(data).catch(function () {});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(data.url).then(function () {
+        note.textContent = "Link copied!";
+      }, function () {
+        note.textContent = data.url;
+      });
+    } else {
+      note.textContent = data.url;
+    }
+  });
+})();
+</script>
+{% endblock %}

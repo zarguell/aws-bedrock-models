@@ -68,4 +68,12 @@ tr:target td { background: #fff6df; }
 .rss { font-weight: 700; }
 .feeds li { margin: 0.4rem 0; }
 .muted { color: var(--muted); font-size: 0.85em; }
+.timer { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem;
+  margin: 1rem 0; padding: 1.2rem 1.4rem; background: var(--accent-soft);
+  border: 1px solid var(--border); border-radius: 0.8rem; }
+.t-num { font-size: 3rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.t-unit { color: var(--muted); font-weight: 600; margin-right: 0.6rem; }
+#share-btn { font-size: 1rem; font-weight: 700; padding: 0.5rem 1rem;
+  border: 1px solid var(--accent); border-radius: 0.5rem;
+  background: var(--accent); color: #fff; cursor: pointer; }
 footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }

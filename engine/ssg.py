@@ -138,6 +138,11 @@ def slugify(s):
     return s or "model"
 
 
+def frontier_slug(display):
+    """URL slug for a frontier model (shared by gaps links, timer routes, sitemap)."""
+    return slugify(display)
+
+
 def model_slug(family, model):
     return slugify(f"{family}-{model}")
 
@@ -217,6 +222,7 @@ def build(repo_root=None, out_dir=None):
         envs=ENVS, env_label=ENV_LABEL,
         fmt_date=fmt_date, fmt_med=fmt_med,
         slugify=slugify, model_slug=model_slug, esc=esc,
+        frontier_slug=frontier_slug,
         item_title=item_title, item_guid=item_guid,
         lag_days=lag_days, days_between=days_between,
         generated=iso_now(), rss_pubdate=rss_pubdate,
@@ -243,6 +249,7 @@ def build(repo_root=None, out_dir=None):
         "frontier": frontier,
         "drought": drought_per_env(counts, changes),
         "today": today_iso(),
+        "timer_pages": [],
     }
 
     def url(rel):
@@ -267,6 +274,20 @@ def build(repo_root=None, out_dir=None):
                               env_list=per_env[slug]))
     written.append(render("history.html", os.path.join("history", "index.html")))
     written.append(render("gaps.html", os.path.join("gaps", "index.html")))
+    timer_pages = []
+    for e in frontier:
+        mslug = frontier_slug(e["display"])
+        for slug, label, short in ENVS:
+            if e.get("envs", {}).get(slug, {}).get("available"):
+                continue  # timers are for gaps only; closures retire the page
+            rel = os.path.join("gaps", mslug, slug, "index.html")
+            written.append(render(
+                "timer.html", rel, e=e,
+                env_slug=slug, env_label=label, env_short=short,
+                page_url=url(f"gaps/{mslug}/{slug}/"),
+                wait_days=days_between(today_iso(), e["released"])))
+            timer_pages.append(f"gaps/{mslug}/{slug}/")
+    ctx["timer_pages"] = timer_pages
     written.append(render("feeds_index.html", os.path.join("feeds", "index.html")))
     for slug, items in [("all", feeds["all"])] + [(s, feeds[s]) for s, _, _ in ENVS]:
         c = dict(ctx, r="", feed_items_list=items,

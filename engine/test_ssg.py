@@ -204,6 +204,33 @@ def test_gaps_page_renders_gaps_lags_droughts_and_live_counters():
         assert len(dump["frontier"]) == 2 and dump["drought"]["us-ew"]["since"] == "2026-09-04"
 
 
+def test_timer_pages_exist_only_for_gaps_with_meta_share_and_sitemap():
+    with tempfile.TemporaryDirectory() as tmp:
+        _frontier_store(tmp)
+        out = os.path.join(tmp, "_site")
+        written = ssg.build(repo_root=tmp, out_dir=out)
+        rel = {os.path.relpath(p, out) for p in written}
+        # fable: 3 gaps; gpt: us-ew gap only (govcloud/dod authorized)
+        for expected in ("gaps/claude-fable-5/us-ew/index.html",
+                         "gaps/claude-fable-5/govcloud/index.html",
+                         "gaps/claude-fable-5/dod/index.html",
+                         "gaps/gpt-5-6/us-ew/index.html"):
+            assert expected in rel, f"missing {expected}"
+        assert "gaps/gpt-5-6/govcloud/index.html" not in rel
+        timer = open(os.path.join(out, "gaps", "claude-fable-5", "us-ew", "index.html")).read()
+        assert 'property="og:title"' in timer and "claude-fable-5" in timer
+        assert 'name="twitter:card"' in timer
+        assert 'rel="canonical"' in timer
+        assert 'id="share-btn"' in timer and "setInterval(tick, 1000)" in timer
+        assert "data-released=" in timer and 'id="t-secs"' in timer
+        assert "without authorization in" in timer
+        gaps = open(os.path.join(out, "gaps", "index.html")).read()
+        assert "gaps/claude-fable-5/us-ew/" in gaps
+        sitemap = open(os.path.join(out, "sitemap.xml")).read()
+        assert "gaps/claude-fable-5/dod/" in sitemap
+        assert "gaps/gpt-5-6/govcloud/" not in sitemap
+
+
 def test_build_refuses_empty_inventory():
     with tempfile.TemporaryDirectory() as tmp:
         _store(tmp, models=[])

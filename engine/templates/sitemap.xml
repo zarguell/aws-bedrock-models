@@ -6,6 +6,9 @@
 {%- endfor %}
 <url><loc>{{ base_url }}/history/</loc></url>
 <url><loc>{{ base_url }}/gaps/</loc></url>
+{%- for t in timer_pages %}
+<url><loc>{{ base_url }}/{{ t }}</loc></url>
+{%- endfor %}
 <url><loc>{{ base_url }}/feeds/</loc></url>
 <url><loc>{{ base_url }}/about/</loc></url>
 </urlset>

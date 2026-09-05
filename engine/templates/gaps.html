@@ -52,7 +52,7 @@ against this compliance table. Lag = release → first authorization, per enviro
       ✓ {{ fmt_med(cell.first_seen) }}
       <span class="muted">(+{{ lag_days(e.released, cell.first_seen) }}d)</span>
     {% else %}
-      waiting <span data-days-since="{{ e.released }}">{{ days_between(today, e.released) }}</span>d
+      <a href="{{ r }}gaps/{{ frontier_slug(e.display) }}/{{ slug }}/">waiting <span data-days-since="{{ e.released }}">{{ days_between(today, e.released) }}</span>d</a>
     {% endif %}
     </td>
   {%- endfor %}
