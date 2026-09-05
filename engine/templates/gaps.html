@@ -64,6 +64,28 @@ against this compliance table. Lag = release → first authorization, per enviro
 <p>The frontier watch set is currently unavailable (upstream price feed unreadable at last check).</p>
 {% endif %}
 
+<h2>Why the wait?</h2>
+<p>Three forces, all pulling at once:</p>
+<ul>
+  <li><strong>The vendor needs visibility.</strong> In June 2026 Anthropic designated its Mythos-class
+  models “Covered Models,” requiring 30-day retention of prompts and outputs on every platform —
+  <a href="https://support.claude.com/en/articles/15425996-data-retention-practices-for-covered-models" rel="noopener">including
+  Bedrock with ZDR</a> — because misuse like best-of-N jailbreaking and agentic espionage is only
+  visible across many requests. Microsoft restricted internal Fable 5 use in response.</li>
+  <li><strong>Regulated customers need minimization.</strong> Finance, healthcare, and legal buyers told
+  Anthropic the models were unadoptable under their data governance — so on September 2, 2026 it
+  reversed course: <a href="https://www.cxtoday.com/security-privacy-compliance/anthropic-zero-data-retention-enterprise-ai/" rel="noopener">Enterprise
+  Frontier Safeguards</a> put monitoring data in customer-controlled infrastructure with customer keys,
+  and Fable 5.1 shipped ZDR-eligible. Whether 5.1 clears compliance faster than Fable 5 is now the
+  experiment to watch on this page.</li>
+  <li><strong>The process itself is slow and batched.</strong> Traditional FedRAMP authorization runs
+  12–18 months per package, and models accrete in batches — e.g.
+  <a href="https://aws.amazon.com/about-aws/whats-new/2025/05/amazon-bedrock-models-fedramp-high-dod-il-4-5-govcloud/" rel="noopener">May
+  2025, four models at once for GovCloud High</a>. The
+  <a href="https://www.fedramp.gov/20x/" rel="noopener">FedRAMP 20x reform</a> aims pilot authorizations
+  in under two months.</li>
+</ul>
+
 <script>
 (function () {
   function daysSince(iso) {
