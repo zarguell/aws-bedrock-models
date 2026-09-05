@@ -184,6 +184,10 @@ def _frontier_store(tmp):
          "envs": {"us-ew": {"available": False, "first_seen": None},
                    "govcloud": {"available": True, "first_seen": "2026-08-25"},
                    "dod": {"available": True, "first_seen": "2026-08-25"}}},
+        {"provider": "meta", "llm_key": "meta/muse-spark-1.3", "display": "Muse Spark 1.3",
+         "released": "2026-09-02", "bedrock": None,
+         "envs": {s: {"available": False, "first_seen": None}
+                   for s in ("us-ew", "govcloud", "dod")}},
     ]))
 
 
@@ -194,7 +198,7 @@ def test_gaps_page_renders_gaps_lags_droughts_and_live_counters():
         written = ssg.build(repo_root=tmp, out_dir=out)
         assert os.path.join(out, "gaps", "index.html") in written
         gaps = open(os.path.join(out, "gaps", "index.html")).read()
-        assert "Claude Fable 5" in gaps and "GPT-5.6" in gaps
+        assert "Claude Fable 5" in gaps and "GPT-5.6" in gaps and "Muse Spark 1.3" in gaps
         assert "Why the wait?" in gaps
         assert "The OpenAI side looks different" in gaps
         assert "Who never arrives" in gaps
@@ -208,7 +212,7 @@ def test_gaps_page_renders_gaps_lags_droughts_and_live_counters():
         assert "querySelectorAll" in gaps  # the updater script ships
         assert "Claude 3 Haiku" in gaps  # drought shortlist
         dump = json.load(open(os.path.join(out, "models.json")))
-        assert len(dump["frontier"]) == 2 and dump["drought"]["us-ew"]["since"] == "2026-09-04"
+        assert len(dump["frontier"]) == 3 and dump["drought"]["us-ew"]["since"] == "2026-09-04"
 
 
 def test_timer_pages_exist_only_for_gaps_with_meta_share_and_sitemap():

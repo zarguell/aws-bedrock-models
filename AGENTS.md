@@ -25,8 +25,8 @@ deploys to GitHub Pages.
   and `note` (annotations like the Wayback backfill — rendered in history,
   never in feeds).
   The RSS feeds carry the baseline + additions only.
-- `data/frontier.json`: snapshot of the frontier watch set (latest Anthropic +
-  OpenAI flagships from the llm-prices repo's frontier tier, refreshed weekly
+- `data/frontier.json`: snapshot of the frontier watch set (latest Anthropic,
+  OpenAI, and Meta flagships from the llm-prices repo's frontier tier, refreshed weekly
   upstream): release dates, Bedrock-table matches, per-environment status.
   Refreshed by the cronman job on every publish; a brand-new flagship triggers
   a silent republish (no feed items, no notifications).
