@@ -29,4 +29,17 @@ reformatted rows conservatively keep the baseline date. No change events were
 fabricated; the backfill is recorded as a note in the history.</p>
 <h2>Machine-readable</h2>
 <p><a href="{{ r }}models.json">models.json</a> carries the full inventory, change log, and source metadata.</p>
+<h2>Prior history (context, not tracked data)</h2>
+<p>The per-model table above only goes back to the {{ fmt_med(baseline.date) if baseline else "—" }} baseline,
+but the authorizations are older. Archived snapshots of AWS's parent FedRAMP services page show
+Amazon Bedrock moving from "JAB Review" (April 19, 2024) to authorized (June 6, 2024) for
+FedRAMP Moderate in U.S. East/West, with GovCloud High following by October 2024. Claude 3 Sonnet
+and Haiku launched on Bedrock in March 2024 — before the East/West authorization — so they were
+in-region from day one of it. Model-level confirmations came later: FedRAMP High and DoD IL4/IL5
+for Claude models in GovCloud in May 2025.</p>
+<p>Caveat: that history is service-level authorization plus model presence, not a model-level
+attestation (AWS publishes model-level granularity only for High/DoD). The
+<em>available since</em> dates on this site remain first-detection dates and were not backdated
+on this basis — except where an archived copy of this exact table proves earlier availability
+(see the backfill note in <a href="{{ r }}history/index.html">history</a>).</p>
 {% endblock %}

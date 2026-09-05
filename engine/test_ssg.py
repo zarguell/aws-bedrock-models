@@ -133,6 +133,16 @@ def test_note_events_render_but_never_enter_feeds():
         assert "Backfilled dates." in idx
 
 
+def test_about_carries_prior_history_context():
+    with tempfile.TemporaryDirectory() as tmp:
+        _store(tmp)
+        out = os.path.join(tmp, "_site")
+        ssg.build(repo_root=tmp, out_dir=out)
+        about = open(os.path.join(out, "about", "index.html")).read()
+        assert "June 6, 2024" in about and "March 2024" in about
+        assert "May 2025" in about and "not backdated" in about
+
+
 def test_build_refuses_empty_inventory():
     with tempfile.TemporaryDirectory() as tmp:
         _store(tmp, models=[])
