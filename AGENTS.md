@@ -21,12 +21,19 @@ deploys to GitHub Pages.
   `{available, first_seen}`. `first_seen` is the date availability was first
   detected (baseline models carry the baseline date); `null` means not available.
 - `data/changes.json`: oldest-first event log. Entry 0 is always the baseline
-  event; later entries are `added` (one per model per environment) and `removed`.
+  event; later entries are `added` (one per model per environment), `removed`,
+  and `note` (annotations like the Wayback backfill — rendered in history,
+  never in feeds).
   The RSS feeds carry the baseline + additions only.
+- `data/frontier.json`: snapshot of the frontier watch set (latest Anthropic +
+  OpenAI flagships from the llm-prices repo's frontier tier, refreshed weekly
+  upstream): release dates, Bedrock-table matches, per-environment status.
+  Refreshed by the cronman job on every publish; a brand-new flagship triggers
+  a silent republish (no feed items, no notifications).
 - `engine/ssg.py`: all build logic. **All markup lives in
   `engine/templates/`**; this file should stay logic-only.
 - Rendered output sits in the repo ROOT (`index.html`, `env/`, `feeds/`,
-  `history/`, `about/`, `models.json`, …) and is
+  `history/`, `gaps/`, `about/`, `models.json`, …) and is
   **gitignored build output. Never hand-edit it**; edit templates and rebuild.
 
 ## Commands

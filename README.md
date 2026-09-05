@@ -21,6 +21,13 @@ morning a model gains availability:
 
 Silence means nothing changed. Baseline: August 25, 2026.
 
+## Frontier gaps
+
+[Gaps & droughts](https://zarguell.github.io/aws-bedrock-models/gaps/) tracks the latest
+Anthropic + OpenAI flagships against the compliance table (days waiting since release,
+release-to-authorization lag) plus per-environment authorization droughts. Day counters
+are computed live in the browser so they stay exact between rebuilds.
+
 ## How it works
 
 A scheduled job fetches the AWS page every morning, parses its embedded table
