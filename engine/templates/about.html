@@ -17,8 +17,16 @@ and <strong>DoD (CSP SRG IL4/IL5)</strong> environments.</p>
   <li>Removals are recorded in the history page but do not trigger a republish on their own;
       they ship with the next addition-triggered update.</li>
   <li>Baseline is {{ fmt_med(baseline.date) if baseline else "—" }} ({{ source.source_last_updated }}):
-      every model available then carries that first-seen date.</li>
+      every model available then carries that first-seen date — except where an
+      older archived snapshot of the page proves earlier availability (see below).</li>
 </ul>
+<h2>Backfill from archived snapshots</h2>
+<p>The AWS page was captured by the Internet Archive before the baseline
+(only two usable captures ever existed: May 11 and Jun 30, 2026). A one-time
+backfill moved the <em>first-seen</em> date earlier for every model-environment
+availability visible in those snapshots — exact name matches only, so
+reformatted rows conservatively keep the baseline date. No change events were
+fabricated; the backfill is recorded as a note in the history.</p>
 <h2>Machine-readable</h2>
 <p><a href="{{ r }}models.json">models.json</a> carries the full inventory, change log, and source metadata.</p>
 {% endblock %}

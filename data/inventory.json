@@ -6,7 +6,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -24,7 +24,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -42,7 +42,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -60,7 +60,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -78,15 +78,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -96,15 +96,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -114,15 +114,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -132,7 +132,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -150,15 +150,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -168,7 +168,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -186,15 +186,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -204,7 +204,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -222,7 +222,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -240,7 +240,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -276,15 +276,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -366,7 +366,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -384,7 +384,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -402,7 +402,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -420,7 +420,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -456,7 +456,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -474,15 +474,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -492,15 +492,15 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "dod": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-06-26"
         }
       }
     },
@@ -510,7 +510,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -528,7 +528,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -546,7 +546,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -564,7 +564,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -582,7 +582,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -600,7 +600,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -618,7 +618,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -636,7 +636,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -654,7 +654,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -672,7 +672,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -690,7 +690,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -708,7 +708,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -726,7 +726,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -744,7 +744,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -906,7 +906,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -924,7 +924,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -942,7 +942,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -960,7 +960,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,
@@ -978,7 +978,7 @@
       "envs": {
         "us-ew": {
           "available": true,
-          "first_seen": "2026-08-25"
+          "first_seen": "2026-05-11"
         },
         "govcloud": {
           "available": false,

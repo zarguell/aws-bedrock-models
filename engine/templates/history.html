@@ -10,6 +10,9 @@
     {% if c.type == "baseline" %}
     <span class="badge baseline">baseline</span>
     Baseline ({{ c.source_last_updated }}): {{ c.total_models }} models tracked across {{ c.env_count }} environments.
+    {% elif c.type == "note" %}
+    <span class="badge baseline">note</span>
+    {{ c.text }}
     {% elif c.type == "added" %}
     <span class="badge added">new</span>
     <strong>{{ c.model }}</strong> ({{ c.family }}) cleared for {{ env_label[c.env] }}.

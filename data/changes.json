@@ -5,5 +5,10 @@
     "total_models": 56,
     "env_count": 3,
     "source_last_updated": "August 25, 2026"
+  },
+  {
+    "date": "2026-09-05",
+    "type": "note",
+    "text": "Backfilled first-seen dates from archived page snapshots (May 11 and Jun 26, 2026): 57 of 82 model-environment availabilities predate the Aug 25 baseline."
   }
 ]

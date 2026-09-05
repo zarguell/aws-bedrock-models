@@ -19,11 +19,14 @@ Baseline: {{ fmt_med(baseline.date) if baseline else "—" }} ({{ source.source_
 {% if latest_changes %}
 <ul class="changes">
 {%- for c in latest_changes %}
-  <li id="{{ 'baseline-' + c.date if c.type == 'baseline' else 'added-' + c.date + '-' + c.env + '-' + model_slug(c.family, c.model) }}">
+  <li id="{{ 'baseline-' + c.date if c.type == 'baseline' else ('note-' + c.date if c.type == 'note' else 'added-' + c.date + '-' + c.env + '-' + model_slug(c.family, c.model)) }}">
     <span class="date">{{ fmt_med(c.date) }}</span>
     {% if c.type == "baseline" %}
     <span class="badge baseline">baseline</span>
     {{ c.total_models }} models tracked across {{ c.env_count }} environments.
+    {% elif c.type == "note" %}
+    <span class="badge baseline">note</span>
+    {{ c.text }}
     {% elif c.type == "added" %}
     <span class="badge added">new</span>
     <strong>{{ c.model }}</strong> ({{ c.family }}) cleared for {{ env_label[c.env] }}.

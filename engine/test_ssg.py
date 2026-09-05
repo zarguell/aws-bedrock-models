@@ -116,6 +116,23 @@ def test_build_end_to_end():
         assert "Grok 4.3" not in rss2
 
 
+def test_note_events_render_but_never_enter_feeds():
+    with tempfile.TemporaryDirectory() as tmp:
+        _store(tmp, changes=[
+            {"date": "2026-08-25", "type": "baseline", "total_models": 2,
+             "env_count": 3, "source_last_updated": "August 25, 2026"},
+            {"date": "2026-09-05", "type": "note", "text": "Backfilled dates."},
+        ])
+        _, _, changes = ssg.load_store(tmp)
+        assert ssg.feed_items(changes) == [changes[0]]  # note excluded
+        out = os.path.join(tmp, "_site")
+        ssg.build(repo_root=tmp, out_dir=out)
+        hist = open(os.path.join(out, "history", "index.html")).read()
+        assert "Backfilled dates." in hist and "removed" not in hist.split("Backfilled")[0][-500:]
+        idx = open(os.path.join(out, "index.html")).read()
+        assert "Backfilled dates." in idx
+
+
 def test_build_refuses_empty_inventory():
     with tempfile.TemporaryDirectory() as tmp:
         _store(tmp, models=[])
