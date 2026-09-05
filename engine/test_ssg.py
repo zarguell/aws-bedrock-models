@@ -54,7 +54,7 @@ def test_slugify_deterministic_and_safe():
 def test_env_models_filters_unavailable():
     with tempfile.TemporaryDirectory() as tmp:
         _store(tmp)
-        _, models, _ = ssg.load_store(tmp)
+        _, models, _, _ = ssg.load_store(tmp)
         assert [m["model"] for m in ssg.env_models(models, "us-ew")] == [
             "Claude 3 Haiku", "Llama 3.3 70B Instruct"]
         assert [m["model"] for m in ssg.env_models(models, "govcloud")] == ["Claude 3 Haiku"]
@@ -64,7 +64,7 @@ def test_env_models_filters_unavailable():
 def test_feed_items_newest_first_and_per_env():
     with tempfile.TemporaryDirectory() as tmp:
         _store(tmp)
-        _, _, changes = ssg.load_store(tmp)
+        _, _, changes, _ = ssg.load_store(tmp)
         all_items = ssg.feed_items(changes)
         assert [c["type"] for c in all_items] == ["added", "baseline"]
         assert [c["type"] for c in ssg.feed_items(changes, "govcloud")] == ["added", "baseline"]
@@ -89,6 +89,7 @@ def test_build_end_to_end():
                          "robots.txt", "sitemap.xml",
                          "env/us-ew/index.html", "env/govcloud/index.html",
                          "env/dod/index.html", "history/index.html",
+                         "gaps/index.html",
                          "feeds/index.html", "feeds/feed-all.xml",
                          "feeds/feed-us-ew.xml", "feeds/feed-govcloud.xml",
                          "feeds/feed-dod.xml", "about/index.html"):
@@ -123,7 +124,7 @@ def test_note_events_render_but_never_enter_feeds():
              "env_count": 3, "source_last_updated": "August 25, 2026"},
             {"date": "2026-09-05", "type": "note", "text": "Backfilled dates."},
         ])
-        _, _, changes = ssg.load_store(tmp)
+        _, _, changes, _ = ssg.load_store(tmp)
         assert ssg.feed_items(changes) == [changes[0]]  # note excluded
         out = os.path.join(tmp, "_site")
         ssg.build(repo_root=tmp, out_dir=out)
@@ -141,6 +142,66 @@ def test_about_carries_prior_history_context():
         about = open(os.path.join(out, "about", "index.html")).read()
         assert "June 6, 2024" in about and "March 2024" in about
         assert "May 2025" in about and "not backdated" in about
+
+
+def test_lag_days_and_days_between():
+    assert ssg.lag_days("2026-07-09", "2026-08-25") == 47
+    assert ssg.lag_days(None, "2026-08-25") is None
+    assert ssg.lag_days("2026-08-25", None) is None
+    assert ssg.days_between("2026-09-05", "2026-08-25") == 11
+    assert ssg.days_between(None, "2026-08-25") is None
+
+
+def test_drought_baseline_anchors_with_no_later_additions():
+    changes = [{"date": "2026-08-25", "type": "baseline", "total_models": 2,
+                "env_count": 3, "source_last_updated": "August 25, 2026"}]
+    d = ssg.drought_per_env({"us-ew": 2, "govcloud": 1, "dod": 1}, changes)
+    assert d["us-ew"] == {"since": "2026-08-25", "latest": [], "count": 2}
+    changes.append({"date": "2026-09-04", "type": "added", "family": "xAI",
+                    "model": "Grok 4.3", "env": "govcloud",
+                    "env_label": "U.S. GovCloud — FedRAMP Class D"})
+    d2 = ssg.drought_per_env({"us-ew": 2, "govcloud": 2, "dod": 1}, changes)
+    assert d2["govcloud"]["since"] == "2026-09-04"
+    assert d2["govcloud"]["latest"][0]["model"] == "Grok 4.3"
+    assert d2["us-ew"]["since"] == "2026-08-25"  # still anchored on baseline
+
+
+def _frontier_store(tmp):
+    _store(tmp, changes=[
+        {"date": "2026-08-25", "type": "baseline", "total_models": 2,
+         "env_count": 3, "source_last_updated": "August 25, 2026"},
+        {"date": "2026-09-04", "type": "added", "family": "Anthropic",
+         "model": "Claude 3 Haiku", "env": "us-ew", "env_label": "E/W"},
+    ])
+    _write(tmp, "data/frontier.json", json.dumps([
+        {"provider": "anthropic", "llm_key": "anthropic/claude-fable-5",
+         "display": "Claude Fable 5", "released": "2026-06-07", "bedrock": None,
+         "envs": {s: {"available": False, "first_seen": None}
+                   for s in ("us-ew", "govcloud", "dod")}},
+        {"provider": "openai", "llm_key": "openai/gpt-5.6", "display": "GPT-5.6",
+         "released": "2026-07-09",
+         "bedrock": {"family": "OpenAI", "model": "GPT 5.6"},
+         "envs": {"us-ew": {"available": False, "first_seen": None},
+                   "govcloud": {"available": True, "first_seen": "2026-08-25"},
+                   "dod": {"available": True, "first_seen": "2026-08-25"}}},
+    ]))
+
+
+def test_gaps_page_renders_gaps_lags_droughts_and_live_counters():
+    with tempfile.TemporaryDirectory() as tmp:
+        _frontier_store(tmp)
+        out = os.path.join(tmp, "_site")
+        written = ssg.build(repo_root=tmp, out_dir=out)
+        assert os.path.join(out, "gaps", "index.html") in written
+        gaps = open(os.path.join(out, "gaps", "index.html")).read()
+        assert "Claude Fable 5" in gaps and "GPT-5.6" in gaps
+        assert "+47d" in gaps  # Jul 9 -> Aug 25 lag, static
+        assert 'data-days-since="2026-06-07"' in gaps  # live waiting counter
+        assert 'data-days-since="2026-09-04"' in gaps  # live drought counter
+        assert "querySelectorAll" in gaps  # the updater script ships
+        assert "Claude 3 Haiku" in gaps  # drought shortlist
+        dump = json.load(open(os.path.join(out, "models.json")))
+        assert len(dump["frontier"]) == 2 and dump["drought"]["us-ew"]["since"] == "2026-09-04"
 
 
 def test_build_refuses_empty_inventory():

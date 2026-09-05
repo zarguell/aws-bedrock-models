@@ -1,0 +1,89 @@
+[
+  {
+    "provider": "anthropic",
+    "llm_key": "anthropic/claude-fable-5",
+    "display": "Claude Fable 5",
+    "released": "2026-06-07",
+    "bedrock": null,
+    "envs": {
+      "us-ew": {
+        "available": false,
+        "first_seen": null
+      },
+      "govcloud": {
+        "available": false,
+        "first_seen": null
+      },
+      "dod": {
+        "available": false,
+        "first_seen": null
+      }
+    }
+  },
+  {
+    "provider": "openai",
+    "llm_key": "openai/gpt-5.6",
+    "display": "GPT-5.6",
+    "released": "2026-07-09",
+    "bedrock": {
+      "family": "OpenAI",
+      "model": "GPT 5.6"
+    },
+    "envs": {
+      "us-ew": {
+        "available": false,
+        "first_seen": null
+      },
+      "govcloud": {
+        "available": true,
+        "first_seen": "2026-08-25"
+      },
+      "dod": {
+        "available": true,
+        "first_seen": "2026-08-25"
+      }
+    }
+  },
+  {
+    "provider": "anthropic",
+    "llm_key": "anthropic/claude-opus-5",
+    "display": "Claude Opus 5",
+    "released": "2026-07-24",
+    "bedrock": null,
+    "envs": {
+      "us-ew": {
+        "available": false,
+        "first_seen": null
+      },
+      "govcloud": {
+        "available": false,
+        "first_seen": null
+      },
+      "dod": {
+        "available": false,
+        "first_seen": null
+      }
+    }
+  },
+  {
+    "provider": "anthropic",
+    "llm_key": "anthropic/claude-fable-5-1",
+    "display": "Claude Fable 5.1",
+    "released": "2026-09-01",
+    "bedrock": null,
+    "envs": {
+      "us-ew": {
+        "available": false,
+        "first_seen": null
+      },
+      "govcloud": {
+        "available": false,
+        "first_seen": null
+      },
+      "dod": {
+        "available": false,
+        "first_seen": null
+      }
+    }
+  }
+]

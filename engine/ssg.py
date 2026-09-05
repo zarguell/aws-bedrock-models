@@ -35,7 +35,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime
+from datetime import date, datetime
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -76,9 +76,10 @@ def load_store(repo_root=None):
     with open(os.path.join(data, "inventory.json")) as f:
         inventory = json.load(f)
     changes = load_json(os.path.join(data, "changes.json"), [])
+    frontier = load_json(os.path.join(data, "frontier.json"), [])
     models = sorted(inventory.get("models", []),
                     key=lambda m: (m.get("family", ""), m.get("model", "")))
-    return source, models, changes
+    return source, models, changes, frontier
 
 
 def env_models(models, slug):
@@ -90,7 +91,39 @@ def env_counts(models):
     return {slug: len(env_models(models, slug)) for slug, _, _ in ENVS}
 
 
+def drought_per_env(counts, changes):
+    """Days-since-last-authorization per environment + latest additions.
+
+    The baseline batch anchors environments with no later additions (it is
+    the last known authorization batch, not a gap in tracking).
+    """
+    baseline = changes[0] if changes and changes[0].get("type") == "baseline" else None
+    anchor = baseline["date"] if baseline else None
+    out = {}
+    for slug, _, _ in ENVS:
+        added = [c for c in changes
+                 if c.get("type") == "added" and c.get("env") == slug]
+        out[slug] = {
+            "since": added[-1]["date"] if added else anchor,
+            "latest": list(reversed(added[-5:])),
+            "count": counts.get(slug, 0),
+        }
+    return out
+
+
+def lag_days(released, first_seen):
+    """Release-to-authorization lag in days (both historical dates; static)."""
+    if not released or not first_seen:
+        return None
+    return (date.fromisoformat(first_seen) - date.fromisoformat(released)).days
+
+
 def feed_items(changes, slug=None):
+    """Newest-first feed items: baseline anchor + additions (optionally one env)."""
+    items = [c for c in changes
+             if c.get("type") in ("baseline", "added")
+             and (slug is None or c.get("type") == "baseline" or c.get("env") == slug)]
+    return list(reversed(items))[:FEED_MAX_ITEMS]
     """Newest-first feed items: baseline anchor + additions (optionally one env)."""
     items = [c for c in changes
              if c.get("type") in ("baseline", "added")
@@ -185,10 +218,11 @@ def build(repo_root=None, out_dir=None):
         fmt_date=fmt_date, fmt_med=fmt_med,
         slugify=slugify, model_slug=model_slug, esc=esc,
         item_title=item_title, item_guid=item_guid,
+        lag_days=lag_days, days_between=days_between,
         generated=iso_now(), rss_pubdate=rss_pubdate,
     )
 
-    source, models, changes = load_store(repo_root)
+    source, models, changes, frontier = load_store(repo_root)
     if not models:
         raise SystemExit("no model inventory found — nothing to build")
     counts = env_counts(models)
@@ -206,6 +240,9 @@ def build(repo_root=None, out_dir=None):
         "per_env": per_env,
         "feeds": feeds,
         "baseline": changes[0] if changes and changes[0].get("type") == "baseline" else None,
+        "frontier": frontier,
+        "drought": drought_per_env(counts, changes),
+        "today": today_iso(),
     }
 
     def url(rel):
@@ -229,6 +266,7 @@ def build(repo_root=None, out_dir=None):
                               env_slug=slug, env_label=label, env_short=short,
                               env_list=per_env[slug]))
     written.append(render("history.html", os.path.join("history", "index.html")))
+    written.append(render("gaps.html", os.path.join("gaps", "index.html")))
     written.append(render("feeds_index.html", os.path.join("feeds", "index.html")))
     for slug, items in [("all", feeds["all"])] + [(s, feeds[s]) for s, _, _ in ENVS]:
         c = dict(ctx, r="", feed_items_list=items,
@@ -257,6 +295,18 @@ def build(repo_root=None, out_dir=None):
     print(f"rendered {len(written)} files, pruned {pruned} stale "
           f"({len(models)} models, {len(changes)} change events) -> {out}")
     return written
+
+
+def today_iso():
+    from zoneinfo import ZoneInfo
+    return datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+
+
+def days_between(later_iso, earlier_iso):
+    """Whole days between two YYYY-MM-DD dates (server-side fallback; JS refreshes)."""
+    if not later_iso or not earlier_iso:
+        return None
+    return (date.fromisoformat(later_iso) - date.fromisoformat(earlier_iso)).days
 
 
 def iso_now():

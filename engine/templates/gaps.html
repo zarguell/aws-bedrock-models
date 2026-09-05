@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Frontier gaps & droughts — {{ site_name }}{% endblock %}
+{% block content %}
+<h1>Frontier gaps &amp; authorization droughts</h1>
+<p class="lede">How long the newest flagship models wait for compliance clearance — and how long
+each environment has gone without a new authorization. Day counters update live in your
+browser (from the dates below), so they stay exact between site rebuilds.</p>
+
+<h2>Authorization droughts</h2>
+<section class="cards">
+{%- for slug, label, short in envs %}
+  {% set d = drought[slug] %}
+  <div class="card">
+    <span class="card-num"><span data-days-since="{{ d.since }}">{{ days_between(today, d.since) }}</span>d</span>
+    <span class="card-label">{{ short }} — no new authorization since {{ fmt_med(d.since) }}</span>
+    <span class="card-sub">{{ d.count }} models currently · {{ label }}</span>
+  </div>
+{%- endfor %}
+</section>
+{% for slug, label, short in envs %}
+  {% set d = drought[slug] %}
+  <h3>Latest in {{ short }}</h3>
+  {% if d.latest %}
+  <ul class="changes">
+  {%- for c in d.latest %}
+    <li><span class="date">{{ fmt_med(c.date) }}</span>
+      <span class="badge added">new</span>
+      <strong>{{ c.model }}</strong> ({{ c.family }})</li>
+  {%- endfor %}
+  </ul>
+  {% else %}
+  <p>No additions since the {{ fmt_med(baseline.date) if baseline else "—" }} baseline batch.</p>
+  {% endif %}
+{% endfor %}
+
+<h2>Frontier watch</h2>
+<p class="lede">Latest Anthropic + OpenAI flagships (from the
+<a href="https://zarguell.github.io/llm-prices/">LLM Prices Watch</a> frontier tier, refreshed weekly)
+against this compliance table. Lag = release → first authorization, per environment.</p>
+<table>
+<thead><tr><th>Model</th><th>Released</th>
+{%- for slug, label, short in envs %}<th>{{ short }}</th>{%- endfor %}</tr></thead>
+<tbody>
+{%- for e in frontier %}
+<tr>
+  <td>{{ e.display }} <span class="muted">({{ e.provider }})</span></td>
+  <td>{{ fmt_med(e.released) }}</td>
+  {%- for slug, label, short in envs %}
+    {% set cell = e.envs[slug] %}
+    <td>
+    {% if cell.available %}
+      ✓ {{ fmt_med(cell.first_seen) }}
+      <span class="muted">(+{{ lag_days(e.released, cell.first_seen) }}d)</span>
+    {% else %}
+      waiting <span data-days-since="{{ e.released }}">{{ days_between(today, e.released) }}</span>d
+    {% endif %}
+    </td>
+  {%- endfor %}
+</tr>
+{%- endfor %}
+</tbody>
+</table>
+{% if not frontier %}
+<p>The frontier watch set is currently unavailable (upstream price feed unreadable at last check).</p>
+{% endif %}
+
+<script>
+(function () {
+  function daysSince(iso) {
+    var then = Date.parse(iso + "T00:00:00");
+    if (isNaN(then)) return null;
+    var now = new Date();
+    var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    return Math.max(0, Math.floor((today - then) / 86400000));
+  }
+  document.querySelectorAll("[data-days-since]").forEach(function (el) {
+    var n = daysSince(el.getAttribute("data-days-since"));
+    if (n !== null) el.textContent = n;
+  });
+})();
+</script>
+{% endblock %}

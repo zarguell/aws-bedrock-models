@@ -67,4 +67,5 @@ th { background: var(--accent-soft); }
 tr:target td { background: #fff6df; }
 .rss { font-weight: 700; }
 .feeds li { margin: 0.4rem 0; }
+.muted { color: var(--muted); font-size: 0.85em; }
 footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }

@@ -5,6 +5,7 @@
 <url><loc>{{ base_url }}/env/{{ slug }}/</loc></url>
 {%- endfor %}
 <url><loc>{{ base_url }}/history/</loc></url>
+<url><loc>{{ base_url }}/gaps/</loc></url>
 <url><loc>{{ base_url }}/feeds/</loc></url>
 <url><loc>{{ base_url }}/about/</loc></url>
 </urlset>
