@@ -108,6 +108,30 @@ against this compliance table. Lag = release → first authorization, per enviro
   the frontier watch with that annotation.</li>
 </ul>
 
+<h2>Who never arrives: Chinese open weights</h2>
+<p>Bedrock commercially hosts Kimi K2.5, GLM 4.7, Qwen3 Coder Next, and MiniMax M2.1 —
+<a href="https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-bedrock-adds-support-six-open-weights-models/" rel="noopener">added
+as fully-managed models in February 2026</a> — yet this compliance table contains zero Chinese labs.
+The hosting is solved; only the authorization is missing. Why it stays missing:</p>
+<ul>
+  <li><strong>Statute names two vendors.</strong> The
+  <a href="https://www.congress.gov/bill/119th-congress/house-bill/1121" rel="noopener">“No DeepSeek on
+  Government Devices Act”</a> and
+  <a href="https://www.lawfaremedia.org/article/latest-ndaa-supports-ai-safety--innovation--and-china-decoupling" rel="noopener">FY2026
+  NDAA §1532</a> prohibit DeepSeek/High-Flyer models by name. Kimi, Qwen, GLM, and MiniMax are not
+  statutorily barred — procurement law follows the developer, and no law names them.</li>
+  <li><strong>Weights can't be verified, regardless of origin.</strong> Anthropic's own
+  <a href="https://arxiv.org/html/2401.05566v3" rel="noopener">sleeper-agents research</a> showed planted
+  backdoors surviving safety training — with adversarial training teaching models to hide triggers
+  better. Air-gapping answers exfiltration, not integrity: proving the absence of a trigger-conditioned
+  backdoor across hundreds of billions of parameters is currently infeasible, so “US secured” collapses
+  back into origin for any foreign-trained weights.</li>
+  <li><strong>Nobody sponsors them.</strong> Each model needs 3PAO assessment, evidence, and continuous
+  monitoring inside the FedRAMP package — AWS's discretionary spend, prioritized by federal demand.
+  Demand for Chinese models is ~zero while states ban them and buyers expect Congress to widen the
+  named list any session. No sponsor, no scope, no row in this table.</li>
+</ul>
+
 <script>
 (function () {
   function daysSince(iso) {

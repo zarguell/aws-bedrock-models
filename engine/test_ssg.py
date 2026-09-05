@@ -197,6 +197,8 @@ def test_gaps_page_renders_gaps_lags_droughts_and_live_counters():
         assert "Claude Fable 5" in gaps and "GPT-5.6" in gaps
         assert "Why the wait?" in gaps
         assert "The OpenAI side looks different" in gaps
+        assert "Who never arrives" in gaps
+        assert "2401.05566" in gaps
         assert "daybreak/partners-new" in gaps
         assert "15425996-data-retention-practices-for-covered-models" in gaps
         assert "fedramp.gov/20x" in gaps
