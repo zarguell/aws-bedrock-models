@@ -361,6 +361,24 @@
       }
     },
     {
+      "family": "Anthropic",
+      "model": "Claude 5.0 Opus",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-09-09"
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
       "family": "Cohere",
       "model": "Command R",
       "envs": {
@@ -461,6 +479,24 @@
         "govcloud": {
           "available": false,
           "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Google",
+      "model": "Gemma 4",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-09-09"
         },
         "dod": {
           "available": false,
@@ -1005,6 +1041,24 @@
         "dod": {
           "available": true,
           "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "xAI",
+      "model": "Grok 4.6",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-09-09"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-09-09"
         }
       }
     }

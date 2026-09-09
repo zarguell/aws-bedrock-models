@@ -10,5 +10,37 @@
     "date": "2026-09-05",
     "type": "note",
     "text": "Backfilled first-seen dates from archived page snapshots (May 11 and Jun 26, 2026): 57 of 82 model-environment availabilities predate the Aug 25 baseline."
+  },
+  {
+    "date": "2026-09-09",
+    "type": "added",
+    "family": "Anthropic",
+    "model": "Claude 5.0 Opus",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-09-09",
+    "type": "added",
+    "family": "Google",
+    "model": "Gemma 4",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-09-09",
+    "type": "added",
+    "family": "xAI",
+    "model": "Grok 4.6",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-09-09",
+    "type": "added",
+    "family": "xAI",
+    "model": "Grok 4.6",
+    "env": "dod",
+    "env_label": "DoD \u2014 CSP SRG IL4/IL5"
   }
 ]
