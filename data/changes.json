@@ -42,5 +42,37 @@
     "model": "Grok 4.6",
     "env": "dod",
     "env_label": "DoD \u2014 CSP SRG IL4/IL5"
+  },
+  {
+    "date": "2026-09-17",
+    "type": "added",
+    "family": "OpenAI",
+    "model": "GPT 5.6 (Terra and Luna)",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-09-17",
+    "type": "added",
+    "family": "OpenAI",
+    "model": "GPT 5.6 (Terra and Luna)",
+    "env": "dod",
+    "env_label": "DoD \u2014 CSP SRG IL4/IL5"
+  },
+  {
+    "date": "2026-09-17",
+    "type": "removed",
+    "family": "OpenAI",
+    "model": "GPT 5.6",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-09-17",
+    "type": "removed",
+    "family": "OpenAI",
+    "model": "GPT 5.6",
+    "env": "dod",
+    "env_label": "DoD \u2014 CSP SRG IL4/IL5"
   }
 ]

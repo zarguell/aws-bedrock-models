@@ -927,12 +927,30 @@
           "first_seen": null
         },
         "govcloud": {
-          "available": true,
+          "available": false,
           "first_seen": "2026-08-25"
         },
         "dod": {
-          "available": true,
+          "available": false,
           "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT 5.6 (Terra and Luna)",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-09-17"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-09-17"
         }
       }
     },

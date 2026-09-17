@@ -35,11 +35,11 @@
         "first_seen": null
       },
       "govcloud": {
-        "available": true,
+        "available": false,
         "first_seen": "2026-08-25"
       },
       "dod": {
-        "available": true,
+        "available": false,
         "first_seen": "2026-08-25"
       }
     }
