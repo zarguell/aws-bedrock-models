@@ -329,8 +329,8 @@
       "model": "Claude 4.8 Opus",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -347,8 +347,8 @@
       "model": "Claude 5 Sonnet",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -365,8 +365,8 @@
       "model": "Claude 5.0 Opus",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -491,8 +491,8 @@
       "model": "Gemma 4",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -797,8 +797,8 @@
       "model": "Nemotron 3 Super 120B",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -815,8 +815,8 @@
       "model": "Nemotron Nano 12B",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -833,8 +833,8 @@
       "model": "Nemotron Nano 3 30B",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -851,8 +851,8 @@
       "model": "Nemotron Nano 9B",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -873,11 +873,11 @@
           "first_seen": null
         },
         "govcloud": {
-          "available": true,
+          "available": false,
           "first_seen": "2026-08-25"
         },
         "dod": {
-          "available": true,
+          "available": false,
           "first_seen": "2026-08-25"
         }
       }
@@ -891,11 +891,11 @@
           "first_seen": null
         },
         "govcloud": {
-          "available": true,
+          "available": false,
           "first_seen": "2026-08-25"
         },
         "dod": {
-          "available": true,
+          "available": false,
           "first_seen": "2026-08-25"
         }
       }
@@ -905,8 +905,8 @@
       "model": "GPT 5.4",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -938,11 +938,29 @@
     },
     {
       "family": "OpenAI",
+      "model": "GPT 5.6 (Sol)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-09-19"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
       "model": "GPT 5.6 (Terra and Luna)",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -951,6 +969,42 @@
         "dod": {
           "available": true,
           "first_seen": "2026-09-17"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT OSS 120B",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-09-19"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-09-19"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-09-19"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT OSS 20B",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-09-19"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-09-19"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-09-19"
         }
       }
     },
@@ -1049,8 +1103,8 @@
       "model": "Grok 4.3",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
@@ -1067,8 +1121,8 @@
       "model": "Grok 4.6",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-09-19"
         },
         "govcloud": {
           "available": true,
