@@ -258,5 +258,29 @@
     "model": "GPS OSS 20B",
     "env": "dod",
     "env_label": "DoD \u2014 CSP SRG IL4/IL5"
+  },
+  {
+    "date": "2026-09-26",
+    "type": "added",
+    "family": "Anthropic",
+    "model": "Claude 5.5 Opus",
+    "env": "us-ew",
+    "env_label": "U.S. E/W \u2014 FedRAMP Class C"
+  },
+  {
+    "date": "2026-09-26",
+    "type": "added",
+    "family": "Anthropic",
+    "model": "Claude 5.5 Opus",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-09-26",
+    "type": "added",
+    "family": "OpenAI",
+    "model": "GPT 6 (Astra)",
+    "env": "us-ew",
+    "env_label": "U.S. E/W \u2014 FedRAMP Class C"
   }
 ]

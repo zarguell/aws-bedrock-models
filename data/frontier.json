@@ -49,15 +49,18 @@
     "llm_key": "anthropic/claude-opus-5",
     "display": "Claude Opus 5",
     "released": "2026-07-24",
-    "bedrock": null,
+    "bedrock": {
+      "family": "Anthropic",
+      "model": "Claude 5.5 Opus"
+    },
     "envs": {
       "us-ew": {
-        "available": false,
-        "first_seen": null
+        "available": true,
+        "first_seen": "2026-09-26"
       },
       "govcloud": {
-        "available": false,
-        "first_seen": null
+        "available": true,
+        "first_seen": "2026-09-26"
       },
       "dod": {
         "available": false,
