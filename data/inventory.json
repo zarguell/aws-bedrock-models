@@ -397,6 +397,24 @@
       }
     },
     {
+      "family": "Anthropic",
+      "model": "Claude 5.5 Sonnet",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-10-01"
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
       "family": "Cohere",
       "model": "Command R",
       "envs": {
@@ -997,6 +1015,42 @@
         "us-ew": {
           "available": true,
           "first_seen": "2026-09-26"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT 6 (Luna)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-10-01"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT 6 (Sol)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-10-01"
         },
         "govcloud": {
           "available": false,
