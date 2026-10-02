@@ -401,8 +401,8 @@
       "model": "Claude 5.5 Sonnet",
       "envs": {
         "us-ew": {
-          "available": false,
-          "first_seen": null
+          "available": true,
+          "first_seen": "2026-10-02"
         },
         "govcloud": {
           "available": true,
