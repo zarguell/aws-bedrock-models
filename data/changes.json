@@ -314,5 +314,13 @@
     "model": "Claude 5.5 Sonnet",
     "env": "us-ew",
     "env_label": "U.S. E/W \u2014 FedRAMP Class C"
+  },
+  {
+    "date": "2026-10-06",
+    "type": "added",
+    "family": "OpenAI",
+    "model": "GPT 6.1 (Sol)",
+    "env": "us-ew",
+    "env_label": "U.S. E/W \u2014 FedRAMP Class C"
   }
 ]
