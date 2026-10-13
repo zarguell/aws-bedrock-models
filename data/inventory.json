@@ -380,6 +380,24 @@
     },
     {
       "family": "Anthropic",
+      "model": "Claude 5.5 Haiku",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-10-13"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "Anthropic",
       "model": "Claude 5.5 Opus",
       "envs": {
         "us-ew": {
