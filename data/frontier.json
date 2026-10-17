@@ -45,30 +45,6 @@
     }
   },
   {
-    "provider": "anthropic",
-    "llm_key": "anthropic/claude-opus-5",
-    "display": "Claude Opus 5",
-    "released": "2026-07-24",
-    "bedrock": {
-      "family": "Anthropic",
-      "model": "Claude 5.5 Opus"
-    },
-    "envs": {
-      "us-ew": {
-        "available": true,
-        "first_seen": "2026-09-26"
-      },
-      "govcloud": {
-        "available": true,
-        "first_seen": "2026-09-26"
-      },
-      "dod": {
-        "available": false,
-        "first_seen": null
-      }
-    }
-  },
-  {
     "provider": "meta",
     "llm_key": "meta/muse-spark-1.3",
     "display": "Muse Spark 1.3",
