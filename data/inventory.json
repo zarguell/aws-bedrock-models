@@ -1259,6 +1259,24 @@
           "first_seen": "2026-09-09"
         }
       }
+    },
+    {
+      "family": "xAI",
+      "model": "Grok 4.7",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-10-22"
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-10-22"
+        },
+        "dod": {
+          "available": true,
+          "first_seen": "2026-10-22"
+        }
+      }
     }
   ]
 }
