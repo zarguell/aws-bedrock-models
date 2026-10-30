@@ -402,5 +402,13 @@
     "model": "Grok 4.7",
     "env": "dod",
     "env_label": "DoD \u2014 CSP SRG IL4/IL5"
+  },
+  {
+    "date": "2026-10-30",
+    "type": "added",
+    "family": "OpenAI",
+    "model": "GPT 6.1 (Terra)",
+    "env": "us-ew",
+    "env_label": "U.S. E/W \u2014 FedRAMP Class C"
   }
 ]

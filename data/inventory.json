@@ -1100,6 +1100,24 @@
     },
     {
       "family": "OpenAI",
+      "model": "GPT 6.1 (Terra)",
+      "envs": {
+        "us-ew": {
+          "available": true,
+          "first_seen": "2026-10-30"
+        },
+        "govcloud": {
+          "available": false,
+          "first_seen": null
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
       "model": "GPT OSS 120B",
       "envs": {
         "us-ew": {
