@@ -433,6 +433,24 @@
       }
     },
     {
+      "family": "Anthropic",
+      "model": "Fable 5.1",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-11-10"
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
       "family": "Cohere",
       "model": "Command R",
       "envs": {
@@ -987,6 +1005,24 @@
         "dod": {
           "available": false,
           "first_seen": "2026-08-25"
+        }
+      }
+    },
+    {
+      "family": "OpenAI",
+      "model": "GPT 5.6 (Cyber) - Daybreak Red",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-11-10"
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
         }
       }
     },

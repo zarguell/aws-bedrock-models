@@ -410,5 +410,21 @@
     "model": "GPT 6.1 (Terra)",
     "env": "us-ew",
     "env_label": "U.S. E/W \u2014 FedRAMP Class C"
+  },
+  {
+    "date": "2026-11-10",
+    "type": "added",
+    "family": "Anthropic",
+    "model": "Fable 5.1",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-11-10",
+    "type": "added",
+    "family": "OpenAI",
+    "model": "GPT 5.6 (Cyber) - Daybreak Red",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
   }
 ]
