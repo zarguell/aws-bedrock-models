@@ -451,6 +451,24 @@
       }
     },
     {
+      "family": "Anthropic",
+      "model": "Fable 5.2",
+      "envs": {
+        "us-ew": {
+          "available": false,
+          "first_seen": null
+        },
+        "govcloud": {
+          "available": true,
+          "first_seen": "2026-11-14"
+        },
+        "dod": {
+          "available": false,
+          "first_seen": null
+        }
+      }
+    },
+    {
       "family": "Cohere",
       "model": "Command R",
       "envs": {

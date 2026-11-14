@@ -426,5 +426,13 @@
     "model": "GPT 5.6 (Cyber) - Daybreak Red",
     "env": "govcloud",
     "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
+  },
+  {
+    "date": "2026-11-14",
+    "type": "added",
+    "family": "Anthropic",
+    "model": "Fable 5.2",
+    "env": "govcloud",
+    "env_label": "U.S. GovCloud \u2014 FedRAMP Class D"
   }
 ]
